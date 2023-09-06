@@ -86,3 +86,25 @@ connection.once('open', async () => {
   console.log("seeding complete")
   process.exit(0);
 })
+
+//connection.once('open', async () => {
+//    let users = await connection.db.listCollections({ name: 'users' }).toArray();
+//    if (users.length) await connection.dropCollection('users');
+//  
+//    let thoughts = await connection.db.listCollections({ name: 'thoughts' }).toArray();
+//    if (thoughts.length) await connection.dropCollection('thoughts');
+//  
+//    const newThoughts = buildFinalThoughts()
+//    const newUsers = buildFinalUsers()
+//  
+//    try {
+      await User.insertMany(newUsers)
+//    } catch (err) {
+      throw new Error(err) 
+//    }
+//  
+//   
+//  
+//    console.log("seeding complete")
+//    process.exit(0);
+//  })
